@@ -7,7 +7,7 @@ public class App {
 
         Message email = new EmailMessage(emailLogin, "alice@example.com", "bob@example.com", "Hello Bob!");
         Message sms = new SMSMessage(smsLogin, "Alice", "Bob", "Hi Bob, this is Alice.");
-
+        
         email.send("alice", "password123");
         sms.send("anyuser", "token-abc-123");
 

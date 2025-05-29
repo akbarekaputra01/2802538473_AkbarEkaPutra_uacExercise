@@ -1,5 +1,5 @@
 package uacExercise;
 
-public interface ILogin {
-    boolean authenticate(String username, String password);
+public interface ILogin{
+	public int authenticate(Credential credential);
 }

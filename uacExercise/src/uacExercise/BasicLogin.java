@@ -1,17 +1,18 @@
 package uacExercise;
 
-public class BasicLogin implements ILogin {
-    private String username;
-    private String password;
+public class BasicLogin implements ILogin{
+	String name;
+	String pass;
+ 	
+	public BasicLogin(String userName, String password) {
+		name = userName;
+		pass = password;
+	}
 
-    public BasicLogin(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-    @Override
-    public boolean authenticate(String username, String password) {
-        return this.username.equals(username) && this.password.equals(password);
-    }
+	@Override
+	public int authenticate(Credential credential) {
+		if(credential.name != this.name) return 0;
+		if(credential.key != this.pass) return 0;
+		return 1;
+	}
 }
-
